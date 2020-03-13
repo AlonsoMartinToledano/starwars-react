@@ -12,19 +12,19 @@ const Film = (props) => {
 
     let stars = ["✴️", "✴️", "✴️", "✴️", "✴️"];
 
-    if (media >= 0.5) {
+    if (media[id - 1] >= 0.5) {
         stars[0] = "⭐";
     }
-    if(media >= 1.5) {
+    if(media[id - 1] >= 1.5) {
         stars[1] = "⭐";
     }
-    if (media >= 2.5) {
+    if (media[id - 1] >= 2.5) {
         stars[2] = "⭐";
     }
-    if (media >= 3.5) {
+    if (media[id - 1] >= 3.5) {
         stars[3] = "⭐";
     }
-    if (media >= 4.5) {
+    if (media[id - 1] >= 4.5) {
         stars[4] = "⭐";
     }
 

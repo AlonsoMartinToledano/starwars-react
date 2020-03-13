@@ -10,22 +10,30 @@ class App extends Component {
   state = {
     films: [...Films],
     infoFilm: null,
-    media: 0,
-    numValorations: 0
+    media: [0, 0, 0, 0, 0, 0, 0],
+    numValorations: [0, 0, 0, 0, 0, 0, 0],
+    initialValoration: 0
   }
 
   onFilmHandler = (infoFilm) => {
     this.setState({infoFilm});
+    this.setState({initialValoration: 0})
   }
 
   onXHandler = (infoFilm) => {
     this.setState({infoFilm});
+    this.setState({initialValoration: 0})
   }
 
-  onStarHandler = (star) => {
-    const newMedia = (this.state.media * this.state.numValorations + star) / (this.state.numValorations + 1);
-    this.setState({numValorations: this.state.numValorations + 1});
+  onStarHandler = (star, episode) => {
+    const newMedia = this.state.media;
+    const newNumValorations = this.state.numValorations;
+
+    newMedia[episode - 1] = (newMedia[episode - 1] * newNumValorations[episode - 1] + star) / (newNumValorations[episode - 1] + 1);
+    newNumValorations[episode - 1]++;
+    this.setState({numValorations: newNumValorations});
     this.setState({media: newMedia});
+    this.setState({initialValoration: star});
   }
 
   render() {
