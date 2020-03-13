@@ -1,5 +1,5 @@
-#starwars-react
-##Install
+# starwars-react
+## Install
 npm install
-##Run
+## Run
 npm start
