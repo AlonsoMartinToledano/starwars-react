@@ -8,7 +8,6 @@ import Right from "./components/Right";
 class App extends Component {
 
   state = {
-    films: [...Films],
     infoFilm: null,
     media: [0, 0, 0, 0, 0, 0, 0],
     numValorations: [0, 0, 0, 0, 0, 0, 0],
@@ -37,15 +36,16 @@ class App extends Component {
   }
 
   render() {
+    const films= [...Films];
     let content;
 
     if(this.state.infoFilm === null){
-      content = <Body data={this.state} onClick={{onFilm: this.onFilmHandler}}/>
+      content = <Body data={this.state} films={films} onClick={{onFilm: this.onFilmHandler}}/>
     } else {
       content =
         <div className="NewBody">
-          <Body data={this.state} onClick={{onFilm: this.onFilmHandler}}/>
-          <Right data={this.state} onClick={{onX: this.onXHandler, onStar: this.onStarHandler}}/>
+          <Body data={this.state} films= {films} onClick={{onFilm: this.onFilmHandler}}/>
+          <Right data={this.state} films= {films} onClick={{onX: this.onXHandler, onStar: this.onStarHandler}}/>
         </div>
     }
 

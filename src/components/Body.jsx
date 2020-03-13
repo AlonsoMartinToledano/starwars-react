@@ -4,8 +4,7 @@ import "./styles.css";
 import Film from "./Film";
 
 const Body = (props) => {
-    const {data, onClick} = props;
-    const films = data.films;
+    const {data, films, onClick} = props;
 
     return (
         <div className="Body">

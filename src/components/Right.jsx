@@ -5,10 +5,9 @@ import Characters from "./Characters";
 import DataFilm from "./DataFilm";
 
 const Right = (props) => {
-    const {data} = props;
+    const {data, films} = props;
     const {onX, onStar} = props.onClick;
 
-    const films = data.films;
     const initialValoration = data.initialValoration;
 
     let film;
