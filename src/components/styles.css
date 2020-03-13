@@ -1,7 +1,7 @@
 .Body {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    align-content: flex-start;
 
     flex-wrap: wrap;
     width: 100%;
@@ -93,6 +93,11 @@
 
 
 .Film {
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.FilmContent {
     width: 220px;
     height: 300px;
     border: 1px solid black;

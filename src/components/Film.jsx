@@ -30,11 +30,13 @@ const Film = (props) => {
 
     return (
         <div className="Film" onClick={() => onFilm({id})}>
-            <img className="Image" src={image} alt={title}/>
-            <div className="Title">{title}</div>
-            <div className="Episode">Episode: {id}</div>
-            <div className="Stars1">
-                {stars}
+            <div className="FilmContent">
+                <img className="Image" src={image} alt={title}/>
+                <div className="Title">{title}</div>
+                <div className="Episode">Episode: {id}</div>
+                <div className="Stars1">
+                    {stars}
+                </div>
             </div>
         </div>
     )
