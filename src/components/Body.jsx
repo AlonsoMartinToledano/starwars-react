@@ -9,7 +9,7 @@ const Body = (props) => {
 
     return (
         <div className="Body">
-            {films.map(obj => <Film film={obj} key={obj.episode_id} onClick={onClick}/>)}
+            {films.map(obj => <Film data={data} film={obj} key={obj.episode_id} onClick={onClick}/>)}
         </div>
     )
 }

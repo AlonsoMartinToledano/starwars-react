@@ -9,7 +9,9 @@ class App extends Component {
 
   state = {
     films: [...Films],
-    infoFilm: null
+    infoFilm: null,
+    media: 0,
+    numValorations: 0
   }
 
   onFilmHandler = (infoFilm) => {
@@ -18,6 +20,12 @@ class App extends Component {
 
   onXHandler = (infoFilm) => {
     this.setState({infoFilm});
+  }
+
+  onStarHandler = (star) => {
+    const newMedia = (this.state.media * this.state.numValorations + star) / (this.state.numValorations + 1);
+    this.setState({numValorations: this.state.numValorations + 1});
+    this.setState({media: newMedia});
   }
 
   render() {
@@ -29,7 +37,7 @@ class App extends Component {
       content =
         <div className="NewBody">
           <Body data={this.state} onClick={{onFilm: this.onFilmHandler}}/>
-          <Right data={this.state} onClick={{onX: this.onXHandler}}/>
+          <Right data={this.state} onClick={{onX: this.onXHandler, onStar: this.onStarHandler}}/>
         </div>
     }
 
